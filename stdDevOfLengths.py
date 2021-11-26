@@ -53,14 +53,37 @@ def stdDevOfLengths(L):
 def coefVar(SD, avg):
     return SD/avg    
 
-
+########################
+# Normal Distributions #
+#######################
+def normDist(SD, avg, L):
+    if SD == 0:
+        return "Standard Deviation of 0"
     
+    lengths = []
+    for j in L:
+        lengths.append(len(j))
+    
+    points = []
+    for i in  lengths:
+        points.append((1/(SD*math.sqrt(2*math.pi))*(math.e)**(((-1/2)*(i-avg)/SD)**2)))
+
+    return points
+
 # SHOULD RETURN 0
 L = ['a', 'z', 'p']
-print(stdDevOfLengths(L))
-print("coefficient of variation", coefVar(*(stdDevOfLengths(L))), '\n')  
+print("STANDARD DEVIATION OF LENGTH:  ",stdDevOfLengths(L))
+print("COEFFICIENT OF VARIATION:  ", coefVar(*(stdDevOfLengths(L))), '\n')  
+print("NORMAL DISTRIBUTION POINTS:  ", normDist(*(stdDevOfLengths(L)),L), '\n')
+
 
 # SHOULD RETURN 1.8708    
 L = ['apples', 'oranges', 'kiwis', 'pineapples']
-print(stdDevOfLengths(L))
-print("coefficient of variation", coefVar(*(stdDevOfLengths(L))))
+print("STANDARD DEVIATION OF LENGTH:  ",stdDevOfLengths(L))
+print("COEFFICIENT OF VARIATION:  ", coefVar(*(stdDevOfLengths(L))), '\n')  
+print("NORMAL DISTRIBUTION POINTS:  ", normDist(*(stdDevOfLengths(L)),L), '\n')
+
+L = ['tttttttttt', 'tttt', 'tttttttttttt', 'ttttttttttttttt', 'tttttttttttttttttttt', 'ttttt']
+print("STANDARD DEVIATION OF LENGTH:  ", stdDevOfLengths(L))
+print("COEFFICIENT OF VARIATION:  ", coefVar(*(stdDevOfLengths(L))))
+print("NORMAL DISTRIBUTION POINTS:  ", normDist(*(stdDevOfLengths(L)),L), '\n')
