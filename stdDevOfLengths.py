@@ -2,7 +2,6 @@
 """
 Standard Deviation 
 (to use as reference)
-
 Author: Tyler Conley
 Date: 11-26-2021
 """
@@ -17,7 +16,6 @@ os.environ["OPENBLAS_NUM_THREADS"] = "1"
 def stdDevOfLengths(L):
     """
     L: a list of strings
-
     returns: float, the standard deviation of the lengths of the strings,
       or NaN if L is empty.
     """
@@ -46,17 +44,23 @@ def stdDevOfLengths(L):
     
     # finally take the square root of the 
     # summation divided by the length of the list 
-    return math.sqrt(summation/N)
+    return (math.sqrt(summation/N), u)
     
+
+############################
+# Coefficient of Variation #
+############################
+def coefVar(SD, avg):
+    return SD/avg    
+
+
     
 # SHOULD RETURN 0
 L = ['a', 'z', 'p']
 print(stdDevOfLengths(L))
-  
+print("coefficient of variation", coefVar(*(stdDevOfLengths(L))), '\n')  
+
 # SHOULD RETURN 1.8708    
 L = ['apples', 'oranges', 'kiwis', 'pineapples']
 print(stdDevOfLengths(L))
-
-
-
-
+print("coefficient of variation", coefVar(*(stdDevOfLengths(L))))
