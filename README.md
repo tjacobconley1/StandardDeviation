@@ -9,4 +9,11 @@ x_i	=	each value from the population
   
   
 # Normal Distribution 
-![image](https://user-images.githubusercontent.com/29659653/143540840-2903aa6b-e642-4b7d-8a5b-9f2cebff326a.png)
+![image](https://user-images.githubusercontent.com/29659653/143540840-2903aa6b-e642-4b7d-8a5b-9f2cebff326a.png)  
+f(x)	=	probability density function  
+\sigma	=	standard deviation  
+\mu	=	mean    
+
+![image](https://user-images.githubusercontent.com/29659653/143541064-dc319ffa-031d-4448-8a41-9bc00ddae021.png)
+
+  
